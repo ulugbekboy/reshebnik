@@ -6184,3 +6184,10 @@ hr {background-color: rgba(39,50,114,0.2);}
   font-weight: bold;
 	color: #9d5f36;
 }
+
+
+
+.footer-about .logo img {
+  max-width: 250px;
+  padding-right: 45px;
+}
