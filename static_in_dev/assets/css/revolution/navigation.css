@@ -506,7 +506,7 @@ email:      info@themepunch.com
 website:    http://www.themepunch.com
 -----------------------------------------------------------------------------*/
 /* ARROWS */
-.erinyen.tparrows {
+/* .erinyen.tparrows {
   cursor:pointer;
   background:#000;
   background:rgba(0,0,0,0.5);
@@ -625,7 +625,7 @@ website:    http://www.themepunch.com
    -webkit-transform:translateX(0px);
   transition-delay: 0.1s;
   opacity:1;
-}
+} */
 
 /* BULLETS */
 .erinyen.tp-bullets {
