@@ -12,43 +12,63 @@ bot = telebot.TeleBot(token)
 
 
 def index(request):
-    try:
-        message=Contacts.objects.all().first()
-    except:
-        message='sorry'
+
+    accordition= Accordition.objects.all()
+    b = Bajar.objects.all().first()
+    otziv =Otziv.objects.all()
+    contact = Contacts.objects.all().first()
+
+
+
 
 
     context= {
-        'message':message
+
+
+        'accordition':accordition,
+        'b':b,
+        'otziv':otziv,
+        'contact':contact
     }
     return render(request , 'index.html', context)
 
 
+def rus(request):
+    accordition = Accordition.objects.all()
+    b = Bajar.objects.all().first()
+    otziv = Otziv.objects.all()
+    contact = Contacts.objects.all().first()
+
+    context = {
+
+        'accordition': accordition,
+        'b': b,
+        'otziv': otziv,
+        'contact': contact
+    }
+
+    return render(request,'rus.html', context)
+
 def contact(request):
+
+
     form = ContactFormForm()
-    
-    if request.method =='POST':
+
+    if request.method == 'POST':
         form = ContactFormForm(request.POST)
         messages.success(request, 'Request were send.')
+
         
         if form.is_valid():
             form.save()
-            
-            try:
-                message_name= request.POST['name']
-                message_phone= request.POST['phone']
-                message_text= request.POST['message']
-                sms = f'📩 Sizga xabar keldi\n\nIsmi: {message_name}\n☎️ Telefon raqami: {message_phone} \n✉️ Xabar: {message_text}'
-                bot.send_message(196862960 , sms)
-                return redirect('index')
 
-            except:
-                message_name= request.POST['name']
-                message_phone= request.POST['phone']
-                sms = f'📩 Sizga xabar keldi\n\nIsmi: {message_name}\n☎️ Telefon raqami: {message_phone} '
-                bot.send_message(196862960 , sms)
-                return redirect('index')
-        
+            message_name= request.POST['name']
+            message_phone= request.POST['phone']
+            message_avatar = request.POST['avatar']
+            message_text= request.POST['message']
+            sms = f'📩 Sizga xabar keldi\n\nIsmi: {message_name}\n☎{message_avatar}️ Telefon raqami: {message_phone} \n✉️ Xabar: {message_text}'
+            bot.send_message(196862960 , sms)
+            return redirect('index')
 
     
     context={
@@ -56,7 +76,7 @@ def contact(request):
 
 
         }
-    return render(request , 'indexing.html' , context)
+    return render(request , 'contact.html' , context)
 
 
 

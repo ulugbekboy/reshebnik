@@ -32,7 +32,48 @@
     </head>
     <body>
         <main>
-           {% include "part/header.html" %}
+           <div id="mta-page-loader-container" class="mta-loader-container style1">
+    <div id="mta-page-loader" class="mta-loader">
+        <div class="inner"></div>
+        <img class="loader-logo" src="/static/assets/images/loader-logo.png" alt="Loader Logo">
+    </div>
+</div>
+<header class="stick style1 logo-left">
+    <div class="container d-flex flex-row justify-content-between flex-nowrap">
+        <div class="header-nav-wrap w-100">
+            <nav class="nav-wrap d-flex flex-row align-items-center justify-content-between flex-nowrap">
+                <div class="menu-wrap d-flex flex-row justify-content-start flex-nowrap w-100">
+                    <div class="logo">
+                        <a class="desktop-logo" href="#intro" title="Home">
+                            <img class="default-logo img-fluid" src="/static/assets/images/logo.png" alt="Logo" srcset="assets/images/logo.png 2x">
+                            <img class="sticky-logo img-fluid" src="/static/assets/images/logo2.png" alt="Logo" srcset="assets/images/logo2.png 2x">
+                        </a>
+                    </div><!-- Logo -->
+                    <div class="menu d-flex flex-row align-items-center justify-content-end flex-nowrap w-100">
+                        <ul class="main-menu mb-0 list-unstyled d-flex flex-row align-items-center justify-content-start flex-wrap">
+                            <li><a href="#intro" title="" >Главная</a>
+                            </li>
+                            <li><a href="#service" title="">Услуги</a>
+                            </li>
+                            <li><a href="#about" title="">О нас</a>
+                            </li>
+                            <li><a href="#process" title="">Процесс</a></li>
+                            <li><a href="#contact" title="">Связь</a></li>
+                            <li class="menu-item-has-children"><a href="#" title="">Выбор языка</a>
+                                <ul class="children mb-0 list-unstyled">
+
+
+                                    <li  {% if not request.resolver_match.url_name == 'rus' %} class="active-clr" {%endif%}><a href="{%url 'rus'%}" title="">Русский</a></li>
+                                    <li {% if not request.resolver_match.url_name == 'index1' %} class="active-clr" {%endif%}><a href="{%url 'index1'%}" title="">O'zbekcha</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- Menu -->
+                </div>
+            </nav>
+        </div><!-- Header Nav Wrap -->
+    </div>
+</header><!-- Header
 {% if messages %}
 {% for foo in messages %}
     {{ foo }}
@@ -63,15 +104,15 @@
                         <a href="{%url 'index'%}" title="Home"><img class="img-fluid" src="/static/assets/images/logo2.png" alt="Logo"></a>
                     </div>
                     <ul class="mb-0 list-unstyled">
-                        <li><a href="#intro" title="">Bosh sahifa</a></li>
-                        <li><a href="#service" title="">Xizmatlar</a></li>
-                        <li><a href="#about" title="">Biz haqimizda</a>
-                        <li><a href="#process" title="">Jarayon</a></li>
-                        <li><a href="#contact" title="">Aloqa</a></li>
-                        <li class="menu-item-has-children"><a href="#" title="">Tilni tanlash</a>
+                        <li><a href="#intro" title="">Главная</a></li>
+                        <li><a href="#service" title="">Услуги</a></li>
+                        <li><a href="#about" title="">О нас</a>
+                        <li><a href="#process" title="">Процесс</a></li>
+                        <li><a href="#contact" title="">Связь</a></li>
+                        <li class="menu-item-has-children"><a href="#" title="">Выбор языка</a>
                             <ul class="children mb-0 list-unstyled">
-                                <li><a href="#" title="">Русский</a></li>
-                                <li class="active-clr"><a href="#" title="">O'zbekcha</a></li>
+                                <li  {% if not request.resolver_match.url_name == 'rus' %} class="active-clr" {%endif%} ><a href="{%url 'rus'}" title="">Русский</a></li>
+                                <li  {% if not request.resolver_match.url_name == 'index1' %} class="active-clr" {%endif%}><a href="{%url 'index1'%}" title="">O'zbekcha</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -165,7 +206,7 @@
                                         data-paddingright="[0,0,0,0]"
                                         data-paddingbottom="[0,0,0,0]"
                                         data-paddingleft="[0,0,0,0]"
-                                        style="letter-spacing: 0;font-weight:800;font-family: Nunito;color:#fff;">We are Creating <br> Custom SEO
+                                        style="letter-spacing: 0;font-weight:800;font-family: Nunito;color:#fff;">Мы работаем  <br> только для вас
                                     </div>
 
                                     <!-- LAYER NR. 5 -->
@@ -207,7 +248,7 @@
                                         data-paddingright="[44,40,35,30]"
                                         data-paddingbottom="[21,17,14,12]"
                                         data-paddingleft="[44,40,35,30]"
-                                        style="cursor:pointer;line-height: 14px;display: inline-block;font-family: Rubik;font-size: 1rem;letter-spacing: 0;font-weight: 600;">Biz haqimizda
+                                        style="cursor:pointer;line-height: 14px;display: inline-block;font-family: Rubik;font-size: 1rem;letter-spacing: 0;font-weight: 600;">О нас
                                     </a>
 
                                     <!-- LAYER NR. 7 -->
@@ -230,7 +271,7 @@
                                         data-paddingright="[44,40,35,30]"
                                         data-paddingbottom="[21,17,14,12]"
                                         data-paddingleft="[44,40,35,30]"
-                                        style="cursor:pointer;line-height: 14px;display: inline-block;font-family: Rubik;font-size: 1rem;letter-spacing: 0;font-weight: 600;">Bog'lanish
+                                        style="cursor:pointer;line-height: 14px;display: inline-block;font-family: Rubik;font-size: 1rem;letter-spacing: 0;font-weight: 600;">Связаться
                                     </a>
                                 </li>
 
@@ -302,9 +343,10 @@
                                     </span>
                                     <div class="service-info">
                                         <i class="font-style-normal">01</i>
-                                        <h3 class="mb-0">SEO Optimization</h3>
-                                        <p class="mb-0">Start working with an company that provide everything you need to any create awareness drive</p>
-                                        <a class="service-btn" href="javascript:void(0);" title="">READ MORE</a>
+                                        <h3 class="mb-0">SEO Оптимизация</h3>
+                                        <p class="mb-0">Начните работать с компанией, которая предоставляет все необходимое для повышения осведомленности
+</p>
+                                        <a class="service-btn" href="javascript:void(0);" title="">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -332,9 +374,10 @@
                                     </span>
                                     <div class="service-info">
                                         <i class="font-style-normal">02</i>
-                                        <h3 class="mb-0">Social Marketing</h3>
-                                        <p class="mb-0">Start working with an company that provide everything you need to any create awareness drive</p>
-                                        <a class="service-btn" href="javascript:void(0);" title="">READ MORE</a>
+                                        <h3 class="mb-0">Социальный маркетинг</h3>
+                                        <p class="mb-0">Начните работать с компанией, которая предоставляет все необходимое для повышения осведомленности
+</p>
+                                        <a class="service-btn" href="javascript:void(0);" title="">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -361,9 +404,10 @@
                                     </span>
                                     <div class="service-info">
                                         <i class="font-style-normal">03</i>
-                                        <h3 class="mb-0">Digital Marketing</h3>
-                                        <p class="mb-0">Start working with an company that provide everything you need to any create awareness drive</p>
-                                        <a class="service-btn" href="javascript:void(0);" title="">READ MORE</a>
+                                        <h3 class="mb-0">Цифровой маркетинг</h3>
+                                        <p class="mb-0">Начните работать с компанией, которая предоставляет все необходимое для повышения осведомленности
+</p>
+                                        <a class="service-btn" href="javascript:void(0);" title="">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -431,9 +475,9 @@
                                     </span>
                                     <div class="service-info">
                                         <i class="font-style-normal">04</i>
-                                        <h3 class="mb-0">SEO Optimization</h3>
-                                        <p class="mb-0">Start working with an company that provide everything you need to any create awareness drive</p>
-                                        <a class="service-btn" href="javascript:void(0);" title="">READ MORE</a>
+                                        <h3 class="mb-0">SEO Оптимизация</h3>
+                                        <p class="mb-0">Начните работать с компанией, которая предоставляет все необходимое для повышения осведомленности</p>
+                                        <a class="service-btn" href="javascript:void(0);" title="">Подробнее...</a>
                                     </div>
                                 </div>
                             </div>
@@ -452,8 +496,9 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-lg-6">
                                     <div class="about-desc w-100">
-                                        <h2 class="mb-0 text-center">Biz nima qila olamiz?</h2>
-                                        <p class="mb-0 text-justify">Qiyin vaziyatda tez yordam oling! Murakkab muammolar yechimini toping, tushunarsiz materialni saralash, imtihonga tayyorgarlik ko'rish. Xavotirlar tufayli stress va qo'rquvdan xalos bo'ling. Bizning mutaxassislarimiz hozir yordam berishga tayyor.</p>
+                                        <h2 class="mb-0 text-center">Что мы можем?</h2>
+                                        <p class="mb-0 text-justify">Получите оперативную помощь в сложной ситуации! Находите решения сложных проблем, разбирайте непонятный материал, готовьтесь к экзамену. Избавьтесь от стресса и страха из-за переживаний. Наши специалисты готовы помочь.
+</p>
                                         <div class="btns">
                                             <a class="icon-btn theme-btn icon-right fill-btn" href="#process"><i class="metaicon-028-arrow-metamax"></i>Jarayon<i class="metaicon-028-arrow-metamax"></i></a>
                                             <a class="simple-btn theme-btn bordered-btn" href="#contact" title="Contact Us">Bog'lanish</a>
@@ -471,32 +516,35 @@
                     <div class="container">
                         <div class="sec-title2 mb-70 text-center w-100">
                             <div class="d-inline-block">
-                                <h2 class="mb-0 text-uppercase text-color2">Jarayon</h2>
-                                <p class="mb-0">Siz to'g'ridan-to'g'ri mutaxassislar bilan ishlaysiz,
-                                    vositachilarga ortiqcha to'lovlarsiz, <br> shuning uchun
-                                    bizning narxlarimiz 2-3 baravar past</p>
+                                <h2 class="mb-0 text-uppercase text-color2">Процесс</h2>
+
+
+                                <p class="mb-0">Вы работаете напрямую с профессионалами,
+                                   без переплаты посредникам, <br>
+                                                        поэтому
+                                    наши цены в 2-3 раза ниже</p>
                             </div>
                         </div><!-- Section Title Style 2 -->
                         <div class="roadmap-wrap text-center w-100 position-relative d-flex flex-nowrap flex-row justify-content-between align-items-start">
                             <div class="roadmap-item color1 position-relative">
                                 <span class="d-inline-block position-absolute roadmap-icon"><i class="metaicon-telephone-handle-silhouette"></i></span>
                                 <span class="d-inline-block roadmap-label"><i class="font-style-normal">01</i></span>
-                                <h5 class="mb-0">Bog'laning</h5>
+                                <h5 class="mb-0">Связитесь</h5>
                             </div>
                             <div class="roadmap-item color2 position-relative">
                                 <span class="d-inline-block position-absolute roadmap-icon"><i class="metaicon-stadistics"></i></span>
                                 <span class="d-inline-block roadmap-label"><i class="font-style-normal">02</i></span>
-                                <h5 class="mb-0">Kelishing</h5>
+                                <h5 class="mb-0">Договаритесь</h5>
                             </div>
                             <div class="roadmap-item color3 position-relative">
                                 <span class="d-inline-block position-absolute roadmap-icon"><i class="metaicon-typewriter"></i></span>
                                 <span class="d-inline-block roadmap-label"><i class="font-style-normal">03</i></span>
-                                <h5 class="mb-0">Qabul qiling</h5>
+                                <h5 class="mb-0">Получите</h5>
                             </div>
                             <div class="roadmap-item color4 position-relative">
                                 <span class="d-inline-block position-absolute roadmap-icon"><i class="metaicon-analytics-1"></i></span>
                                 <span class="d-inline-block roadmap-label"><i class="font-style-normal">04</i></span>
-                                <h5 class="mb-0">Natijaga erishing</h5>
+                                <h5 class="mb-0">Получите результат</h5>
                             </div>
                         </div><!-- Roadmap Wrap -->
                     </div>
@@ -522,9 +570,9 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-lg-6">
                                     <div class="about-desc2 w-100">
-                                        <h2 class="mb-0">To'g'ri tanlov</h2>
-                                        <p class="mb-0">Biz bilan xech qachon yutqizmaysiz.</p>
-                                        <a class="simple-btn theme-btn fill-btn3" href="#contact" title="Read More">Batavsil</a>
+                                        <h2 class="mb-0">Правильный выбор</h2>
+                                        <p class="mb-0">С нами ни когда не проиграете.</p>
+                                        <a class="simple-btn theme-btn fill-btn3" href="#contact" title="Read More">Подробнее...</a>
                                     </div>
                                 </div>
                             </div>
@@ -539,8 +587,8 @@
                             <div class="row mrg">
                                 <div class="col-md-6 col-sm-12 col-lg-6">
                                     <div class="about-info-cap overflow-hidden w-100" style="background-image: url(/static/assets/images/text-bg.jpg);">
-                                        <h2 class="mb-0 text-white">Mutlaqo <br> ishonchli <span class="text-color7">yordam</span> turi</h2>
-                                        <p class="mb-0 text-white">Hech qachon   avsuslanmaysiz</p>
+                                        <h2 class="mb-0 text-white">Абсолютно <br> прозрачный <span class="text-color7">форма</span> помощи</h2>
+                                        <p class="mb-0 text-white">Ни когда не пожалеете</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-lg-6">
@@ -569,8 +617,8 @@
 
 
                                             <div class="toggle-item w-100">
-                                                <h4 class="mb-0">{{ a.question}} <i class="metaicon-add"></i></h4>
-                                                <div class="toggle-content w-100"><p class="mb-0">{{ a.answer}}.</p></div>
+                                                <h4 class="mb-0">{{ a.question_ru}} <i class="metaicon-add"></i></h4>
+                                                <div class="toggle-content w-100"><p class="mb-0">{{ a.answer_ru}}.</p></div>
                                             </div>
                                           {% endfor %}
                                         </div>
@@ -628,44 +676,47 @@
                                                 <div class="testi-info">
                                                     <img class="img-fluid rounded-circle" src="{{o.image.url}}" alt="Testimonial Image 1">
                                                     <div class="testi-info-inner">
-                                                        <h4 class="mb-0">{{ o.name}}</h4>
-                                                        <span class="d-block">{{ o.status}}</span>
+                                                        <h4 class="mb-0">{{ o.name_ru}}</h4>
+                                                        <span class="d-block">{{ o.status_ru}}</span>
                                                     </div>
                                                 </div>
-                                                <p class="mb-0">{{ o.content}}</p>
+                                                <p class="mb-0">{{ o.content_ru}}</p>
                                                 <span class="d-block star-rating">
-                                                    {% if o.point == 1 %}
+                                                    {% if o.point == '1' %}
                                                     <i class="metaicon-star-in-black-of-five-points-shape off"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape off"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape off"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                    {% elif o.point == 2  %}
-                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                        {% elif o.point == 3  %}
-                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
-                                                        {% elif o.point == 4  %}
-                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape off"></i>
 
-                                                    {% endif %}
+                                                    {% elif o.point == '2'  %}
+                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+
+                                                        {% elif o.point == '3'  %}
+                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+
+                                                        {% elif o.point == '4'  %}
+                                                        <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
+                                                    <i class="metaicon-star-in-black-of-five-points-shape off"></i>
+                                                     {% else %}
+
                                                    <i class="metaicon-star-in-black-of-five-points-shape on"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape on"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape on"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape on"></i>
                                                     <i class="metaicon-star-in-black-of-five-points-shape on"></i>
-
+                                                            {% endif %}
                                                 </span>
                                             </div>
                                            {% endfor %}
